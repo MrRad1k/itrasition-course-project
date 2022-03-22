@@ -35,7 +35,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://itrasition-course-project.herokuapp.com",
     methods: "GET, POST, PUT, DELETE",
     credentials: true
 }))

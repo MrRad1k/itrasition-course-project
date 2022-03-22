@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
             /> */
 const Navbar = ({ user }) => {
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open("https://itrasition-course-project.herokuapp.com/auth/logout", "_self");
   };
   return (
     <div className="navbar">
       <span className="logo">
         <Link className="link" to="/">
-          Lama App
+           App
         </Link>
       </span>
       {user ? (
