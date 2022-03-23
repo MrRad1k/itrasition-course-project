@@ -27,7 +27,7 @@ app.use('/api', router)
 ////
 app.use(cookieSession({
     name: "session",
-    keys: ["lama"],
+    keys: ["key"],
     maxAge: 24 * 60 * 60 * 100
 }))
 
@@ -35,7 +35,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use(cors({
-    origin: "https://itrasition-course-project.herokuapp.com",
+    origin: "http://localhost:3000",
     methods: "GET, POST, PUT, DELETE",
     credentials: true
 }))
