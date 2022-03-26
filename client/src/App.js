@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch(process.env.REACT_APP_API_URL + "auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {
@@ -46,8 +46,8 @@ const App = () => {
             element={user ? <Navigate to="/" /> : <Login />}
           />
           <Route
-            path="/post/:id"
-            element={user ? <Post /> : <Navigate to="/login" />}
+            path="/review/:id"
+            element={<Post />}
           />
         </Routes>
       </div>

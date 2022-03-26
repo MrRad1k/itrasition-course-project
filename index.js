@@ -21,8 +21,9 @@ const app = express()
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'dist')))
+app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
-app.use('/api', router)
+
 
 ////
 app.use(cookieSession({
@@ -37,18 +38,15 @@ app.use(passport.session())
 app.use(cors({
     origin: "http://localhost:3000",
     methods: "GET, POST, PUT, DELETE",
-    credentials: true
+    credentials: true,
 }))
 
+app.use('/api', router)
 app.use("/auth", authRouter)
 ////
 
-
 app.use(errorHandler)
 
-app.get('/', (req, res) => {
-    res.status(200).json({ message: "Working!" })
-})
 
 const start = async () => {
     try {

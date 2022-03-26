@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = ({ user }) => {
   const logout = () => {
-    window.open("http://localhost:5000/auth/logout", "_self");
+    window.open(process.env.REACT_APP_API_URL + "auth/logout", "_self");
   };
   return (
     <div className="navbar">
@@ -14,7 +14,7 @@ const Navbar = ({ user }) => {
       {user ? (
         <ul className="list">
           <li className="listItem">
-          <img
+            <img
               src={user.photo}
               alt=""
               className="avatar"
