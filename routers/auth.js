@@ -28,9 +28,30 @@ router.get("/logout", (req, res) => {
 router.get("/google",
     passport.authenticate("google", { scope: ["profile", "email"] }))
 
-router.get("/google/callback", passport.authenticate("google", {
-    successRedirect: process.env.CLIENT_URL,
-    failureRedirect: "/login/falied"
-}))
+router.get("/google/callback",
+    passport.authenticate("google", {
+        successRedirect: process.env.CLIENT_URL,
+        failureRedirect: "/login/falied"
+    }))
+
+router.get("/facebook",
+    passport.authenticate("facebook", { scope: ["profile"] }));
+
+router.get("/facebook/callback",
+    passport.authenticate("facebook", {
+        successRedirect: process.env.CLIENT_URL,
+        failureRedirect: "/login/failed",
+    })
+);
+
+router.get("/github",
+    passport.authenticate("github", { scope: ['user:email'] }));
+
+router.get("/github/callback",
+    passport.authenticate("github", {
+        successRedirect: process.env.CLIENT_URL,
+        failureRedirect: "/login/failed",
+    })
+);
 
 module.exports = router

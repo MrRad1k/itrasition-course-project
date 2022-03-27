@@ -22,12 +22,12 @@ const Navbar = ({ user }) => {
           </li>
           <li className="listItem">{user.name}</li>
           <li className="listItem" onClick={logout}>
-            Logout
+            Выйти
           </li>
         </ul>
       ) : (
         <Link className="link" to="login">
-          Login
+          Войти
         </Link>
       )}
     </div>

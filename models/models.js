@@ -8,7 +8,8 @@ const User = sequelize.define('user', {
     email: { type: DataTypes.STRING },
     role: { type: DataTypes.STRING, defaultValue: "USER" },
     photo: { type: DataTypes.STRING },
-    googleId: { type: DataTypes.STRING }
+    googleId: { type: DataTypes.STRING },
+    githubId: { type: DataTypes.STRING }
 })
 
 const Review = sequelize.define('review', {

@@ -23,7 +23,7 @@ const Card = ({ post }) => {
       <Link className="link" to={`/review/${post.id}`}>
         <span className="title">{post.titel}</span>
         <img src={reviews?.images[0]?.img} alt="" className="img" />
-        <button className="cardButton">Read More</button>
+        <button className="cardButton">Подробнее</button>
       </Link>
     </div>
   );

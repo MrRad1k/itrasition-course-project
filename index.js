@@ -8,12 +8,11 @@ const router = require('./routers/index')
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 const path = require('path')
 
-////
 const cookieSession = require('cookie-session')
 const passport = require('passport')
 const passportSetup = require('./passport')
 const authRouter = require("./routers/auth")
-////
+
 
 const PORT = process.env.PORT || 5000
 
@@ -25,7 +24,6 @@ app.use(express.static(path.resolve(__dirname, 'static')))
 app.use(fileUpload({}))
 
 
-////
 app.use(cookieSession({
     name: "session",
     keys: ["key"],
@@ -43,7 +41,7 @@ app.use(cors({
 
 app.use('/api', router)
 app.use("/auth", authRouter)
-////
+
 
 app.use(errorHandler)
 
